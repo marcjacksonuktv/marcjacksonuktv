@@ -1,0 +1,156 @@
+import time
+from time import gmtime, strftime
+import datetime
+
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.chrome.options import Options
+from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.opera.options import Options
+from selenium.webdriver.safari.permissions import Permission
+options = Options()
+options.add_argument('--user-data-dir=/Users/james.stott/Desktop/SeleniumLogOn')
+options.add_argument("start-maximized")
+options.add_argument("disable-infobars")
+options.add_experimental_option("prefs", {
+    "profile.default_content_setting_values.media_stream_mic": 1,
+    "profile.default_content_setting_values.media_stream_camera": 1,
+    "profile.default_content_setting_values.geolocation": 1,
+    "profile.default_content_setting_values.notifications": 1})
+from selenium import webdriver
+driver = webdriver.Chrome('/Users/marc.jackson/PycharmProjects/untitled/venv/Selenium/Remote/chromedriver')
+a = ActionChains(driver)
+testurl = 'https://dave.uktv.co.uk/'
+driver.get(testurl)
+
+#Home Page Elements
+#Main Navigation Tabs
+HomeButton = driver.find_element_by_xpath('//*[@id="home-btn"]')
+OnDemandTab = driver.find_element_by_xpath('//*[@id="main-nav"]/ul/li[1]/a')
+TVGuideTab =driver.find_element_by_xpath('//*[@id="main-nav"]/ul/li[2]/a')
+ShowTab = driver.find_element_by_xpath('//*[@id="main-nav"]/ul/li[3]/a')
+PodcastTab = driver.find_element_by_xpath('//*[@id="main-nav"]/ul/li[4]/a')
+WinTab = driver.find_element_by_xpath('//*[@id="main-nav"]/ul/li[5]/a')
+MotoringTab= driver.find_element_by_xpath('//*[@id="main-nav"]/ul/li[6]/a')
+WatchLiveTab = driver.find_element_by_xpath('//*[@id="main-nav"]/ul/li[7]/a')
+SearchField= driver.find_element_by_id('site-search-label')
+SearchIcon = driver.find_element_by_xpath('//*[@id="site-search-btn"]/i')
+
+#Navigation and Carousels
+LeftArrow = driver.find_element_by_xpath('//*[@id="dave-hero-slider"]/ul/li[1]/a')
+RightArrow = driver.find_element_by_xpath('//*[@id="dave-hero-slider"]/ul/li[2]/a')
+OnDaveNowLeft = driver.find_element_by_xpath('//*[@id="dave-hero-slider"]/ul/li[2]/a')
+OnDaveNowRight = driver.find_element_by_xpath('//*[@id="main-content"]/aside/div/div/ul/li[2]/a')
+ShowMoreButton = driver.find_element_by_xpath('//*[@id="main-content"]/div[2]/div/nav/a/i')
+MostPopularTab =driver.find_element_by_css_selector('#catchup-widget-tabs > li.popular.active > a')
+MPShowMoreButton = driver.find_element_by_css_selector('#main-content > div.widget.catchup-tabs.mobile-grid.two-col-mini-grid > div > nav > a')
+LatestTab = driver.find_element_by_css_selector('#catchup-widget-tabs > li.latest')
+LTShowMoreButton = driver.find_element_by_css_selector('#main-content > div.widget.catchup-tabs.mobile-grid.two-col-mini-grid > div > nav > a')
+AtoZTab = driver.find_element_by_css_selector('#catchup-widget-tabs > li.az.last')
+A2ZNumberedTab= driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[1]/a')
+A2ZLetterA = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[2]/a')
+A2ZLetterB = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[3]/a')
+A2ZLetterC = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[4]/a')
+A2ZLetterD = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[5]/a')
+A2ZLetterE = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[6]/a')
+A2ZLetterF = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[7]/a')
+A2ZLetterG = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[8]/a')
+A2ZLetterH = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[9]/a')
+A2ZLetterI = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[10]/a')
+A2ZLetterJ = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[11]/a')
+A2ZLetterK = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[12]')
+A2ZLetterL = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[13]/a')
+A2ZLetterM = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[14]/a')
+A2ZLetterN = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[15]/a')
+A2ZLetterO = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[16]/a')
+A2ZLetterP = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[17]')
+A2ZLetterQ = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[18]/a')
+A2ZLetterR = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[19]/a')
+A2ZLetterS = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[20]/a')
+A2ZLetterT = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[21]/a')
+A2ZLetterU = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[22]/a')
+A2ZLetterV = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[23]')
+A2ZLetterW = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[24]/a')
+A2ZLetterX = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[25]')
+A2ZLetterY = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[26]/a')
+A2ZLetterZ = driver.find_element_by_xpath('//*[@id="vod-atoz"]/nav/ol/li[27]/a')
+
+#MostPopularTab.click()
+#time.sleep(1)
+#LatestTab.click()
+##time.sleep(1)
+#AtoZTab.click()
+
+driver.execute_script("window.open('about:blank', 'tab2');")
+driver.switch_to.window("tab2")
+driver.get('http://uktvplay.uktv.co.uk/channel/dave/')
+time.sleep(3)
+CookieNotice = driver.find_element_by_xpath('//*[@id="app"]/div[1]/div/h2')
+CookiePolicy = driver.find_element_by_xpath('//*[@id="app"]/div[1]/div/div/a').get_attribute('href')
+print(CookiePolicy)
+CookieYes = driver.find_element_by_xpath('//*[@id="app"]/div[1]/div/div/button').click()
+time.sleep(2)
+driver.execute_script("window.open('about:blank', 'tab3');")
+driver.switch_to.window("tab3")
+driver.get('https://dave.uktv.co.uk/shows/')
+time.sleep(2)
+driver.execute_script("window.open('about:blank', 'tab4');")
+driver.switch_to.window("tab4")
+driver.get('https://dave.uktv.co.uk/tv-guide/')
+time.sleep(2)
+driver.execute_script("window.open('about:blank', 'tab5');")
+driver.switch_to.window("tab5")
+driver.get('https://dave.uktv.co.uk/podcasts/')
+time.sleep(2)
+driver.execute_script("window.open('about:blank', 'tab6');")
+driver.switch_to.window("tab6")
+driver.get('https://dave.uktv.co.uk/competitions/')
+time.sleep(2)
+driver.execute_script("window.open('about:blank', 'tab7');")
+driver.switch_to.window("tab7")
+driver.get('https://dave.uktv.co.uk/motoring/')
+time.sleep(2)
+driver.execute_script("window.open('about:blank', 'tab8');")
+driver.switch_to.window("tab8")
+driver.get('https://uktvplay.uktv.co.uk/watch-live/dave')
+time.sleep(2)
+driver.close()
+#Show Tab Elements
+STAtoZtab = driver.find_element_by_css_selector('#main-content > div.programmes-container.widget.widget-bg > ul > li.az.active')
+STAtoZtabLetterA = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[2]/a')
+STAtoZtabLetterB = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[3]/a')
+STAtoZtabLetterC = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[4]/a')
+STAtoZtabLetterD = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[5]/a')
+STAtoZtabLetterE = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[6]/a')
+STAtoZtabLetterF = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[7]/a')
+STAtoZtabLetterG = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[8]/a')
+STAtoZtabLetterH = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[9]/a')
+STAtoZtabLetterI = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[10]/a')
+STAtoZtabLetterJ = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[11]/a')
+STAtoZtabLetterK = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[12]/a')
+STAtoZtabLetterL = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[13]/a')
+STAtoZtabLetterM = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[14]/a')
+STAtoZtabLetterN = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[15]/a')
+STAtoZtabLetterO = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[16]/a')
+STAtoZtabLetterP = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[17]/a')
+STAtoZtabLetterQ = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[18]/a')
+STAtoZtabLetterR = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[19]/a')
+STAtoZtabLetterS = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[20]/a')
+STAtoZtabLetterT = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[21]/a')
+STAtoZtabLetterU = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[22]/a')
+STAtoZtabLetterV = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[23]/a')
+STAtoZtabLetterW = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[24]/a')
+STAtoZtabLetterX = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[25]/a')
+STAtoZtabLetterY = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[26]/a')
+STAtoZtabLetterZ = driver.find_element_by_xpath('//*[@id="shows-az"]/nav/ol/li[27]/a')
+TVGuideCTA = driver.find_element_by_xpath('//*[@id="sidebar"]/aside/div/div[2]/a')
+STshowmorebutton= driver.find_element_by_xpath('//*[@id="sidebar"]/div[3]/div/nav/a')
+TwitterModalS = driver.find_element_by_xpath('//*[@id="u_0_1"]/div[1]')
+
+#driver.implicitly_wait(10)
+#STAtoZtab.click()
+
